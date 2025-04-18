@@ -1,0 +1,244 @@
+
+.header {
+position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(30, 30, 30, 0.9);
+  color: rgb(255, 255, 255);
+  padding: 1rem;
+  font-size: 8px;
+  height: 90px;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.6s ease-in-out;
+}
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.innercontent {
+  width: 100%;
+  max-width: 1042px;
+}
+
+.divPatrat {
+  width: 100%;
+  max-width: 400px;
+}
+.hidden {
+  transform: translateY(-80%); 
+}
+.header, .header.hidden {
+  transition: transform 0.3s ease-in-out;
+
+}
+@keyframes shake {
+  0% {
+    transform: translateX(-3px);
+  }
+  25% {
+    transform: translateX(3px);
+  }
+  50% {
+    transform: translateX(-3px);
+  }
+  75% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.Dreapta-Header
+{
+  display: flex;
+  gap: 30px;
+}
+.paragraf
+{
+  width: 50vw;
+}
+.divPatrat
+{
+  color: #0051ff;
+  width: 400px;
+  height: 350px;
+  background-color: #0051ff;
+}
+.logo {
+  height: 1em;
+  padding: 1em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.innercontent {
+  width: 1042px;
+  display: grid;
+  justify-content: start;
+}
+
+body {
+  background-color: #0051ff;;
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Asigură-te că body ocupă întreaga înălțime */
+  overflow-y: auto; /* Permite scroll pe axa verticală */
+}
+
+.container {
+  padding: 20px;
+  height: 200vh; /* Înălțime mare pentru a simula scroll-ul */
+}
+
+.background {
+  background-color: #0051ff;
+  height: 100%; /* Fundalul va acoperi întreaga înălțime a containerului */
+  width: 100%;
+  overflow-y: auto; /* Permite scroll pe container */
+}
+
+
+
+.button {
+  --😀: #644dff;
+  --😀😀: #4836bb;
+  --😀😀😀: #654dff63;
+  cursor: pointer;
+  width: 184px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.125em;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #fff;
+  background: var(--😀);
+  border: 2px solid var(--😀😀);
+  border-radius: .75rem;
+  box-shadow: 0 8px 0 var(--😀😀);
+  transform: skew(-10deg);
+  transition: all .1s ease;
+  filter: drop-shadow(0 15px 20px var(--😀😀😀));
+}
+
+.button:active {
+  letter-spacing: 0px;
+  transform: skew(-10deg) translateY(8px);
+  box-shadow: 0 0 0 var(--😀😀😀);
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.nume
+{
+  padding-left: 300px;
+}
+
+/* Fundal pentru întreaga pagină */
+.background {
+  margin: 0;
+  padding: 0;
+  background-color: #0051ff; /* Culoare pentru secțiunea 1 */
+  overflow-y: auto; /* Permite scroll pe întreaga pagină */
+  height: 100vh; /* Înălțimea inițială a ferestrei */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Asigură-te că body ocupă întreaga înălțime */
+  overflow-y: auto; /* Permite scroll pe axa verticală */
+  background-color: #ffffff; /* Fundalul inițial */
+}
+
+/* Prima secțiune (albastru) */
+.section-one {
+  background-color: #0051ff; /* sau orice nuanță de albastru vrei */
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+.block {
+  position: relative;
+  z-index: 1; /* Asigură-te că zona activă este deasupra altor elemente */
+}
+
+.text {
+  position: relative;
+  z-index: 2; /* Asigură-te că textul și butoanele sunt accesibile */
+}
+
+.signup-text span {
+  cursor: pointer;
+  z-index: 3; /* Asigură-te că link-urile de schimbare a textului sunt deasupra animației */
+}
+
+.circleLight {
+  pointer-events: none; /* Previne ca lumina animată să blocheze interacțiunea cu alte elemente */
+}
+
+
+/* A doua secțiune (verde) care apare după derulare */
+.section-two {
+  background-color: #2a2f2b; /* Altă culoare pentru secțiunea 2 */
+  color: white;
+  padding: 20px;
+  height: 100vh; /* Această secțiune va ocupa întreaga înălțime a ferestrei vizibile */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.content {
+  width: 100vw;
+}
+
+
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
