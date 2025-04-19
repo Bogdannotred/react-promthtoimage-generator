@@ -1,21 +1,84 @@
-
 .header {
-position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(30, 30, 30, 0.9);
-  color: rgb(255, 255, 255);
-  padding: 1rem;
-  font-size: 8px;
-  height: 90px;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  transition: transform 0.6s ease-in-out;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 80px;
+  background-color: #1e1e1e;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
+
+/* Distribuie spațiu */
+.logo, .nume, .Dreapta-Header {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  justify-content: flex-start;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nume {
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.Dreapta-Header {
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+.Dreapta-Header h1 {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .Dreapta-Header {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: #1e1e1e;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 2rem;
+  }
+
+  .mobile-menu h1 {
+    font-size: 1.2rem;
+    border-bottom: 1px solid #444;
+    padding-bottom: 0.5rem;
+  }
+}
+
+
 * {
   max-width: 100%;
   box-sizing: border-box;
@@ -36,40 +99,10 @@ position: fixed;
 .header, .header.hidden {
   transition: transform 0.3s ease-in-out;
 
-}
-@keyframes shake {
-  0% {
-    transform: translateX(-3px);
-  }
-  25% {
-    transform: translateX(3px);
-  }
-  50% {
-    transform: translateX(-3px);
-  }
-  75% {
-    transform: translateX(3px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-.Dreapta-Header
-{
-  display: flex;
-  gap: 30px;
-}
-.paragraf
-{
-  width: 50vw;
+
 }
 
-.logo {
-  height: 1em;
-  padding: 1em;
-  will-change: filter;
-  transition: filter 300ms;
-}
+
 
 .innercontent {
   width: 1042px;
@@ -77,27 +110,10 @@ position: fixed;
   justify-content: start;
 }
 
-
 .container {
   padding: 20px;
   height: 200vh; /* Înălțime mare pentru a simula scroll-ul */
 }
-
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.nume
-{
-  padding-left: 300px;
-}
-
-
-
-
 
 /* Prima secțiune (albastru) */
 .section-one {
@@ -131,45 +147,13 @@ position: fixed;
 }
 
 
-/* A doua secțiune (verde) care apare după derulare */
-.section-two {
-  background-color: #2a2f2b; /* Altă culoare pentru secțiunea 2 */
-  color: white;
-  padding: 20px;
-  height: 100vh; /* Această secțiune va ocupa întreaga înălțime a ferestrei vizibile */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+
 
 .content {
   width: 100vw;
 }
 
 
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
 
 .card {
   padding: 2em;
@@ -221,4 +205,54 @@ position: fixed;
   width: 100%;
   height: 100%;
   z-index: 2;
+}
+
+
+.section-two {
+  background: #2a2f2b;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Formulare */
+.text2img-form,
+.blacktocolor-form {
+  background-color: #404247;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: #4a4a4a 5px 5px 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+
+
+  .Dreapta-Header {
+    display: none;
+  }
+  .nume {
+    padding-left: 4vw;
+    font-size: 1rem;
+  }
+
+  .section-two {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .paragraf {
+    width: 90vw;
+  }
+
+  .text2img-form,
+  .blacktocolor-form {
+    width: 95%;
+  }
 }

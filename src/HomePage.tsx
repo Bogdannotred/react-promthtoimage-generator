@@ -53,8 +53,17 @@ function HomePage() {
         </div>
 
         <div className="section-two">
-          <h1>A doua secțiune cu altă culoare!</h1>
-          <p>Continuă derularea pentru a descoperi mai multe.</p>
+            <form className="text2img-form">
+              <h2>Text to Image</h2>
+              <input type="text" placeholder="Enter your text here" />
+              <button type="submit">Generate</button>
+            </form>
+
+            <form className="blacktocolor-form">
+              <h2>Text to Image</h2>
+              <input type="file" accept="image/*" />
+              <button type="submit">Generate</button>
+            </form>
         </div>
       </div>
     </main>

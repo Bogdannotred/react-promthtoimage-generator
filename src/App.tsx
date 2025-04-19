@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./HomePage";
 import ProtectedRoute from "./ProtectedRoute";
 import Login from "./components/Login";
-
 function App() {
   return (
     <BrowserRouter>
