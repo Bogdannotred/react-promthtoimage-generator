@@ -63,13 +63,7 @@ position: fixed;
 {
   width: 50vw;
 }
-.divPatrat
-{
-  color: #0051ff;
-  width: 400px;
-  height: 350px;
-  background-color: #0051ff;
-}
+
 .logo {
   height: 1em;
   padding: 1em;
@@ -83,57 +77,12 @@ position: fixed;
   justify-content: start;
 }
 
-body {
-  background-color: #0051ff;;
-  margin: 0;
-  padding: 0;
-  height: 100%; /* Asigură-te că body ocupă întreaga înălțime */
-  overflow-y: auto; /* Permite scroll pe axa verticală */
-}
 
 .container {
   padding: 20px;
   height: 200vh; /* Înălțime mare pentru a simula scroll-ul */
 }
 
-.background {
-  background-color: #0051ff;
-  height: 100%; /* Fundalul va acoperi întreaga înălțime a containerului */
-  width: 100%;
-  overflow-y: auto; /* Permite scroll pe container */
-}
-
-
-
-.button {
-  --😀: #644dff;
-  --😀😀: #4836bb;
-  --😀😀😀: #654dff63;
-  cursor: pointer;
-  width: 184px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  font-size: 1.125em;
-  font-weight: 800;
-  letter-spacing: 2px;
-  color: #fff;
-  background: var(--😀);
-  border: 2px solid var(--😀😀);
-  border-radius: .75rem;
-  box-shadow: 0 8px 0 var(--😀😀);
-  transform: skew(-10deg);
-  transition: all .1s ease;
-  filter: drop-shadow(0 15px 20px var(--😀😀😀));
-}
-
-.button:active {
-  letter-spacing: 0px;
-  transform: skew(-10deg) translateY(8px);
-  box-shadow: 0 0 0 var(--😀😀😀);
-}
 
 .logo {
   height: 6em;
@@ -146,22 +95,9 @@ body {
   padding-left: 300px;
 }
 
-/* Fundal pentru întreaga pagină */
-.background {
-  margin: 0;
-  padding: 0;
-  background-color: #0051ff; /* Culoare pentru secțiunea 1 */
-  overflow-y: auto; /* Permite scroll pe întreaga pagină */
-  height: 100vh; /* Înălțimea inițială a ferestrei */
-}
 
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%; /* Asigură-te că body ocupă întreaga înălțime */
-  overflow-y: auto; /* Permite scroll pe axa verticală */
-  background-color: #ffffff; /* Fundalul inițial */
-}
+
+
 
 /* Prima secțiune (albastru) */
 .section-one {
@@ -241,4 +177,53 @@ body {
 
 .read-the-docs {
   color: #888;
+}
+/* Parallax effect styles */
+.section-one.parallax-section {
+  position: relative;
+  overflow: hidden;
+  /* Keep your existing styles */
+  background-color: transparent; /* Make background transparent so we can see parallax background */
+}
+
+.parallax-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-image: url('./test.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  will-change: transform;
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Keep paragraf style but move it here for consistency */
+.parallax-content .paragraf {
+  width: 50vw;
+}
+
+/* Optional overlay for better readability if you add a background image */
+.parallax-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*background-color: rgba(0, 81, 255, 0.7); /* Semi-transparent overlay of your blue */
+  z-index: 2;
 }
