@@ -178,12 +178,11 @@ position: fixed;
 .read-the-docs {
   color: #888;
 }
-/* Parallax effect styles */
+
 .section-one.parallax-section {
   position: relative;
   overflow: hidden;
-  /* Keep your existing styles */
-  background-color: transparent; /* Make background transparent so we can see parallax background */
+  background-color: transparent; 
 }
 
 .parallax-background {
@@ -192,7 +191,7 @@ position: fixed;
   left: 0;
   width: 100%;
   height: 120%;
-  background-image: url('./test.jpg');
+  background-image: url('./assets/background.jpg');
   background-size: cover;
   background-position: center;
   z-index: 1;
@@ -210,13 +209,10 @@ position: fixed;
   align-items: center;
   text-align: center;
 }
-
-/* Keep paragraf style but move it here for consistency */
 .parallax-content .paragraf {
   width: 50vw;
 }
 
-/* Optional overlay for better readability if you add a background image */
 .parallax-background::after {
   content: '';
   position: absolute;
@@ -224,6 +220,5 @@ position: fixed;
   left: 0;
   width: 100%;
   height: 100%;
-  /*background-color: rgba(0, 81, 255, 0.7); /* Semi-transparent overlay of your blue */
   z-index: 2;
 }

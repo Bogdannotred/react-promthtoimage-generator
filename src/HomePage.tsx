@@ -34,11 +34,10 @@ function HomePage() {
       <ScrollHideHeader />
       <div className="content">
         <div className="section-one parallax-section">
-          {/* Aici e imaginea de fundal care se mișcă */}
           <div
             className="parallax-background"
             style={{
-              transform: `translateY(${scrollPosition * 0.3}px)`
+              transform: `translateY(${scrollPosition * 0.4}px)`
             }}
           />
           <div className="parallax-content">
