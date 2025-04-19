@@ -35,7 +35,6 @@ function ScrollHideHeader() {
           <h1>Home</h1>
           <h1>Features</h1>
           <h1>Gallery</h1>
-          <h1>Contact</h1>
         </div>
       )}
     </div>
