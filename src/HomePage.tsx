@@ -1,7 +1,6 @@
 import "./App.css";
 import ScrollHideHeader from "./Scrolling-hide-header";
-import { auth } from "./firebase";
-import { signOut } from "firebase/auth";
+
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -20,14 +19,7 @@ function HomePage() {
     };
   }, []);
 
-  const handleLogout = async () => {
-    try {
-      await signOut(auth);
-      navigate("/");
-    } catch (error) {
-      console.error("Logout failed:", error);
-    }
-  };
+
 
   return (
     <main>
@@ -41,9 +33,6 @@ function HomePage() {
             }}
           />
           <div className="parallax-content">
-            <button style={{ width: 100 }} onClick={handleLogout}>
-              Logout
-            </button>
             <h1>Transform your vision into art</h1>
             <h3 className="paragraf">
               Create stunning AI-generated image or bring your black & white photos
@@ -54,13 +43,13 @@ function HomePage() {
 
         <div className="section-two">
             <form className="text2img-form">
-              <h2>Text to Image</h2>
-              <input type="text" placeholder="Enter your text here" />
+              <h2 className="textsec2">Text to Image</h2>
+              <input style = {{backgroundColor: "white" , color : "black" , justifyContent : "center" , alignContent:"center"}} type="text" placeholder="Enter your text here" />
               <button type="submit">Generate</button>
             </form>
 
             <form className="blacktocolor-form">
-              <h2>Text to Image</h2>
+              <h2 className="textsec2">Text to Image</h2>
               <input type="file" accept="image/*" />
               <button type="submit">Generate</button>
             </form>

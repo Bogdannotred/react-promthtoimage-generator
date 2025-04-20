@@ -1,10 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import "./App.css";
+import { auth } from "./firebase";
+import { signOut , onAuthStateChanged, updatePassword} from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 function ScrollHideHeader() {
   const [scrolling, setScrolling] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false); // state pentru profil
+  const [UserEmail , setUserEmail] = useState(null)
+  const [newPassword, setNewPassword] = useState("");
+  const [status , setStatus] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,10 +24,60 @@ function ScrollHideHeader() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+
+    const unsubscribe = onAuthStateChanged(auth , (user) => {
+      if (user)
+      {
+        setUserEmail(user.email);
+      }
+      else
+      {
+        setUserEmail(null)
+      }
+    });
+
+    return () => unsubscribe();
+
+  },[]);
+
+  
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      navigate("/");
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
+  };
+
+  const handleNewPasswordChange = () => {
+    const user = auth.currentUser;
+    if (user)
+    {
+      updatePassword(user , newPassword)
+      .then(() => {
+        setErrorMessage("Password updated successfully!");
+        setStatus(true);
+      })
+      .catch((error) => {
+        if (error.code === "auth/requires-recent-login") {
+          setErrorMessage("You need to re-login to update your password.Wait 5 seconds...");
+          setTimeout (() => {
+            handleLogout();
+            setStatus(false);
+          },5000);
+
+        }
+      });
+    }
+  };
+
   return (
     <div className={`header ${scrolling ? "hidden" : ""}`}>
  {/* Profil Dropdown */}
- <div
+        <div
           className="profile-dropdown"
           onClick={() => setShowProfileMenu(!showProfileMenu)}
         >
@@ -28,13 +87,24 @@ function ScrollHideHeader() {
             alt="Profile"
           />
           {showProfileMenu && (
-            <div className="dropdown-menu">
-              <h1>Mail</h1>
-              <h1>Settings</h1>
-              <h1>Logout</h1>
+              <div className="dropdown-menu" onClick={(e) => e.stopPropagation()}>
+              <h3>{UserEmail}</h3>
+              <button onClick={handleNewPasswordChange} >Change password </button>
+              <input
+                type = "password"
+                placeholder = "New password"
+                className = "new-password"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+              />
+              {status && <h3>{errorMessage}</h3>}
+              <button style={{ width: 220 }} onClick={handleLogout}>
+              Logout
+              </button>
             </div>
           )}
         </div>
+         {/* Profil Dropdown */}
       <h1 className="nume">Ai Studio</h1>
 
       <div className="Dreapta-Header">
