@@ -17,22 +17,14 @@ function ScrollHideHeader() {
 
   return (
     <div className={`header ${scrolling ? "hidden" : ""}`}>
-      <div className="logo">Logo</div>
-
-      <h1 className="nume">Ai Studio</h1>
-
-      <div className="Dreapta-Header">
-        <h1>Home</h1>
-        <h1>Contact</h1>
-
-        {/* Profil Dropdown */}
-        <div
+ {/* Profil Dropdown */}
+ <div
           className="profile-dropdown"
           onClick={() => setShowProfileMenu(!showProfileMenu)}
         >
           <img
             className="profile-icon"
-            src="https://via.placeholder.com/40" // Folosește o imagine pentru profil
+            src="https://via.placeholder.com/40" 
             alt="Profile"
           />
           {showProfileMenu && (
@@ -43,17 +35,19 @@ function ScrollHideHeader() {
             </div>
           )}
         </div>
-      </div>
+      <h1 className="nume">Ai Studio</h1>
 
+      <div className="Dreapta-Header">
+        <h1>Home</h1>
+        <h1>Contact</h1>
+      </div>
       <div className="hamburger" onClick={() => setShowMenu(!showMenu)}>
         ☰
       </div>
-
       {showMenu && (
         <div className="mobile-menu">
           <h1>Home</h1>
           <h1>Features</h1>
-          <h1>Profile</h1>
         </div>
       )}
     </div>

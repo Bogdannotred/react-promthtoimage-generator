@@ -13,6 +13,29 @@
   border-bottom: 2px solid #505050;
 }
 
+.dropdown-menu {
+  background: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 80px;
+  left: 5px;
+  align-items: center;
+  padding: 0px 20px 0 20px;
+  box-shadow: 12px 13px 13px 4px rgb(142 137 137 / 10%);
+  border-radius: 0 0 30px 30px;
+  border-bottom: 10px solid #444;
+}
+
+.dropdown-menu h1 {
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+  border-bottom: 3px solid #444;
+  color: white;
+  cursor: pointer;
+}
+
 
 .logo, .nume, .Dreapta-Header {
   flex: 1;
@@ -53,6 +76,10 @@
   .Dreapta-Header {
     display: none;
   }
+  .profile-dropdownheder
+  {
+    display: none;
+  }
 
   .hamburger {
     display: flex;
@@ -70,13 +97,37 @@
     flex-direction: column;
     gap: 1rem;
     padding: 1rem 2rem;
+      /* Underlying values */
+  opacity: 1;
+  transform: translateY(0);
+  animation: fade-in 0.25s ease-in;
+  
+  /* Replace is the default value */
+  /* for animation-composition
+  animation-composition: replace; */
+}
+
+
+    
+@keyframes fade-in {
+  0% {
+    /* Effect values */
+    opacity: 0;
+    transform: translateY(50px);
   }
+}
 
   .mobile-menu h1 {
     font-size: 1.2rem;
     border-bottom: 1px solid #444;
     padding-bottom: 0.5rem;
   }
+}
+
+.dropdown-menu {
+  background: #1e1e1e;
+  display: flex;
+  flex-direction: column;
 }
 
 
