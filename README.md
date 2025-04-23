@@ -1,4 +1,8 @@
-OPEN DEMo.mp4 to see a preview
+[Download demo video](./demo.mp4)
+## Demo Video
+
+[![Watch the video](https://img.youtube.com/vi/ID_VIDEO/maxresdefault.jpg)]([https://youtu.be/3Y5uQzP74-M])
+
 
 # React + TypeScript + Vite
 
