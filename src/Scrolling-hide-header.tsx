@@ -8,7 +8,7 @@ function ScrollHideHeader() {
   const [scrolling, setScrolling] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false); // state pentru profil
-  const [UserEmail , setUserEmail] = useState(null)
+  const [UserEmail , setUserEmail] = useState<string | null>(null)
   const [newPassword, setNewPassword] = useState("");
   const [status , setStatus] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
